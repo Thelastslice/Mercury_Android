@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d7d7d7</color>
+    <color name="colorPrimaryDark">#818181</color>
+    <color name="colorAccent">#EBA53D</color>
+
+    <color name="featureTitleColor">#000</color>
+    <color name="actionBarColor">#d7d7d7</color>
+    <color name="actionBarColorDark">#818181</color>
+    <color name="actionBarColorAccent">#EBA53D</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="orange">#DC582A</color>
+    <color name="dark_orange">#9E3F1E</color>
+    <color name="light_orange">#EFB5A0</color>
+    <color name="headerBackgroundColor">#009ada</color>
+    <color name="headerBackgroundColorDark">#0081B7</color>
+    <color name="headerTextColor">#000</color>
+    <color name="actionBarMenuTextColor">#000</color>
+
+    <color name="colorGreen">#00FF00</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorYellow">#FFFF00</color>
+</resources>

@@ -1,0 +1,93 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tactimedical.com.mercury_clinical"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="no.nordicsemi.android.LOG" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="true"  />
+
+    <application
+        android:name=".app.App"
+        android:fullBackupContent="true"
+        android:allowBackup="true"
+        android:label="Mercury Patch"
+        android:icon="@mipmap/ic_launcher">
+
+
+        <!-- Launch Screen -->
+        <activity
+            android:name="tactimedical.com.mercury_clinical.SplashActivity"
+            android:theme="@style/AppTheme.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- PatientTable Selection Screen -->
+        <activity
+            android:icon="@mipmap/ic_launcher"
+            android:label="Please select a patient"
+            android:noHistory="false"
+            android:name="tactimedical.com.mercury_clinical.PatientSelect"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="tactimedical.com.mercury_clinical.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <!-- Create Patient Example -->
+        <activity
+            android:icon="@mipmap/ic_launcher"
+            android:label="New/Edit Patient"
+            android:noHistory="false"
+            android:name="tactimedical.com.mercury_clinical.CreateOrSelectPatient"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <!-- Placement Select -->
+        <activity
+            android:icon="@mipmap/ic_launcher"
+            android:noHistory="false"
+            android:label="Please select Mercury Patch placement"
+            android:name="tactimedical.com.mercury_clinical.PlacementSelect"
+            android:theme="@style/PlacementTheme">
+        </activity>
+
+        <!-- Connecting Screen -->
+
+        <!-- Main Display Screen -->
+        <activity
+            android:name="tactimedical.com.mercury_clinical.uart.UARTActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Mercury Patch Ready for use"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="tactimedical.com.mercury_clinical.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <service
+            android:name="tactimedical.com.mercury_clinical.uart.UARTService"
+            android:label="@string/uart_feature_title" />
+
+    </application>
+
+</manifest>

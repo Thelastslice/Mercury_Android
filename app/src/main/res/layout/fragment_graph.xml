@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/dialogTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/sensorGraph" />
+
+    <Button
+        android:id="@+id/graph_cancel"
+        android:background="@drawable/button_dr"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/drawer_close"/>
+
+</LinearLayout>

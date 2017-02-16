@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlacementSelect">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/patch_placement"
+        android:scaleType="fitCenter" />
+
+    <Button
+        android:id="@+id/sacral_button"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        app:layout_marginRightPercent="47.1%"
+        app:layout_marginTopPercent="36.25%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="end|top"
+        />
+
+    <Button
+        android:id="@+id/thigh_right_button"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:layout_marginRightPercent="43%"
+        app:layout_marginTopPercent="55%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="end|top"
+        />
+
+    <Button
+        android:id="@+id/thigh_left_button"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:layout_marginLeftPercent="44%"
+        app:layout_marginTopPercent="55%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="start|top"
+        />
+
+    <Button
+        android:id="@+id/heel_left_button"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:layout_marginLeftPercent="44.5%"
+        app:layout_marginBottomPercent="2.5%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="start|bottom"
+        />
+
+    <Button
+        android:id="@+id/heel_right_button"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:layout_marginRightPercent="43.5%"
+        app:layout_marginBottomPercent="2.5%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="end|bottom"
+        />
+
+    <Button
+        android:id="@+id/head_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_marginLeftPercent="47%"
+        app:layout_marginTopPercent="9%"
+        android:background="@drawable/placement_button"
+        android:layout_gravity="start|top"
+        />
+</android.support.percent.PercentFrameLayout>

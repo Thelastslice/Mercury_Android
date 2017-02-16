@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:padding="12dp">
+
+    <TableRow
+        android:id="@+id/redTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:padding="6sp"
+        android:weightSum="20">
+
+        <TextView
+            android:id="@+id/redBarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="end"
+            android:layout_gravity="center"
+            android:text="@string/DangerName"
+            android:textColor="#000000"
+            android:background="@color/colorRed"
+            android:layout_weight="7.75"
+            />
+
+        <TextView
+            android:id="@+id/redBarValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="end"
+            android:layout_gravity="center"
+            android:text="@string/Caution"
+            android:layout_weight="8.5"
+            />
+
+        <SeekBar
+            android:id="@+id/redBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:layout_weight="3.5"
+            />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6sp"
+        android:weightSum="20"
+        android:layout_below="@+id/redTable">
+
+        <TextView
+            android:id="@+id/yellowBarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="end"
+            android:layout_gravity="center"
+            android:text="@string/CautionName"
+            android:textColor="#000000"
+            android:background="@color/colorYellow"
+            android:layout_weight="7.75"
+            />
+
+        <TextView
+            android:id="@+id/yellowBarValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="end"
+            android:layout_gravity="center"
+            android:text="@string/Caution"
+            android:layout_weight="8.5"
+            />
+
+        <SeekBar
+            android:id="@+id/yellowBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_weight="3.5"
+            android:layout_gravity="center"
+            />
+    </TableRow>
+</RelativeLayout>
