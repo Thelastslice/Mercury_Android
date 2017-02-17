@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -86,14 +87,20 @@ public class PlacementSelect extends AppCompatActivity implements View.OnClickLi
                                 startActivity(intent);
                             }
                             else{
-                                Log.d(TAG, patientPlacementValues.get(0).getPatientName());
-                                Log.d(TAG, patientPlacementValues.get(0).getPlacementID());
+                                /*Log.d(TAG, patientPlacementValues.get(0).getPatientName());
+                                Log.d(TAG, patientPlacementValues.get(0).getPlacementID());*/
 
                                 File dataOutput = FileHelper.createCSVFile(patientPlacementValues.get(0).getPatientName(),
                                         patientPlacementValues.get(0).getPlacementID());
-
-                                Log.d(TAG, dataOutput.getName());
-                                Log.d(TAG, dataOutput.getPath());
+                                Toast toast = Toast.makeText(getApplicationContext(), "Patient: " +
+                                        patientPlacementValues.get(0).getPatientName()+
+                                        " Location: "+
+                                        patientPlacementValues.get(0).getPlacementID()+
+                                        " Selected.", Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.TOP,0,100);
+                                toast.show();
+                                /*Log.d(TAG, dataOutput.getName());
+                                Log.d(TAG, dataOutput.getPath());*/
                                 Intent intent = new Intent(getApplicationContext(), UARTActivity.class);
                                 intent.putExtra(KEY_FILE, dataOutput);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -115,15 +122,23 @@ public class PlacementSelect extends AppCompatActivity implements View.OnClickLi
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
-                            else{
+                            else{/*
                                 Log.d(TAG, patientPlacementValues.get(0).getPatientName());
-                                Log.d(TAG, patientPlacementValues.get(0).getPlacementID());
+                                Log.d(TAG, patientPlacementValues.get(0).getPlacementID());*/
 
                                 File dataOutput = FileHelper.createCSVFile(patientPlacementValues.get(0).getPatientName(),
                                         patientPlacementValues.get(0).getPlacementID());
 
-                                Log.d(TAG, dataOutput.getName());
-                                Log.d(TAG, dataOutput.getPath());
+                                Toast toast = Toast.makeText(getApplicationContext(), "Patient: " +
+                                        patientPlacementValues.get(0).getPatientName()+
+                                        " Location: "+
+                                        patientPlacementValues.get(0).getPlacementID()+
+                                        " Selected.", Toast.LENGTH_LONG);
+                                        toast.setGravity(Gravity.TOP,0,100);
+                                        toast.show();
+
+                                /*Log.d(TAG, dataOutput.getName());
+                                Log.d(TAG, dataOutput.getPath());*/
                                 Intent intent = new Intent(getApplicationContext(), UARTActivity.class);
                                 intent.putExtra(KEY_FILE, dataOutput);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

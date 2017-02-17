@@ -178,7 +178,6 @@ public class DeviceListAdapter extends BaseAdapter {
 			}
 			final TextView title = (TextView) view;
 			title.setText((Integer) getItem(position));
-			Log.d("Scanner","Titled?");
 
 			break;
 		default:
