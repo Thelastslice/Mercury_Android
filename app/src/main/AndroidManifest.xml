@@ -68,7 +68,7 @@
         <activity
             android:icon="@mipmap/ic_launcher"
             android:noHistory="false"
-            android:label="Mercury Patch placement"
+            android:label="Mercury Patch Placement"
             android:name="tactimedical.com.mercury_clinical.PlacementSelect"
             android:theme="@style/PlacementTheme">
         </activity>
@@ -79,7 +79,7 @@
         <activity
             android:name="tactimedical.com.mercury_clinical.uart.UARTActivity"
             android:icon="@mipmap/ic_launcher"
-            android:label="Mercury Patch Ready for use"
+            android:label="Mercury Patch Ready"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme"
             android:launchMode="singleTask" >

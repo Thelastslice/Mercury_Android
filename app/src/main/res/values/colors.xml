@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#d7d7d7</color>
-    <color name="colorPrimaryDark">#818181</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#bababa</color>
     <color name="colorAccent">#EBA53D</color>
 
     <color name="featureTitleColor">#000000</color>
-    <color name="actionBarColor">#d7d7d7</color>
-    <color name="actionBarColorDark">#818181</color>
+    <color name="actionBarColor">#FFFFFF</color>
+    <color name="actionBarColorDark">#BABABA</color>
     <color name="actionBarColorAccent">#EBA53D</color>
     <color name="backgroundColor">#FFFFFF</color>
     <color name="orange">#DC582A</color>

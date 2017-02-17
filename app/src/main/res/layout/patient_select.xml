@@ -14,13 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/mercury_logo_text"
-        android:alpha="0.075"
+        android:alpha="0.1"
         android:scaleType="fitCenter"
         android:padding="15dp"/>
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
+        android:background="@android:color/transparent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"

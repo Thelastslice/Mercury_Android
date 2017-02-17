@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uart.UARTActivity">
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:ellipsize="end"
+        android:freezesText="true"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:text="@string/uart_default_name"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/patch_outline_app_mepilex"
+        android:scaleType="fitCenter"
+        android:padding="12sp"/>
+
+    <Button
+        android:id="@+id/center_center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="center_vertical|center_horizontal"
+        />
+    <Button
+        android:id="@+id/top_left"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginLeftPercent="35.5%"
+        app:layout_marginTopPercent="22.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="top|start"
+        />
+    <Button
+        android:id="@+id/top_center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginTopPercent="22.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="top|center_horizontal"
+        />
+    <Button
+        android:id="@+id/top_right"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginRightPercent="35.5%"
+        app:layout_marginTopPercent="22.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="top|end"
+        />
+    <Button
+        android:id="@+id/center_left"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginLeftPercent="35.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="start|center_vertical"
+        />
+    <Button
+        android:id="@+id/center_right"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginRightPercent="35.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="end|center_vertical"
+        />
+    <Button
+        android:id="@+id/bottom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_marginBottomPercent="22.5%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="bottom|center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/action_setcolor"
+        style="@style/Widget.Connect"
+        android:background="@drawable/button_dr"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginRightPercent="2%"
+        android:onClick="onSetColorClicked"
+        android:text="@string/action_setcolor"/>
+
+    <Button
+        android:id="@+id/action_connect"
+        style="@style/Widget.Connect"
+        android:background="@drawable/button_dr"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|start"
+        android:layout_centerHorizontal="true"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="2%"
+        android:onClick="onConnectClicked"
+        android:text="@string/action_connect"/>
+
+
+</android.support.percent.PercentFrameLayout>

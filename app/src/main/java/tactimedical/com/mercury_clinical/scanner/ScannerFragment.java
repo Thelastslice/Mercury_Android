@@ -182,7 +182,7 @@ public class ScannerFragment extends DialogFragment {
 			}
 		});
 
-		addBondedDevices();
+		//addBondedDevices();
 		if (savedInstanceState == null)
 			startScan();
 		return dialog;

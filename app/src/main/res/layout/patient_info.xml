@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:background="@android:color/transparent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/KEY_PATIENTID"
+        android:background="@android:color/transparent"
         android:textSize="16sp"
         android:textColor="@color/featureTitleColor"
         android:layout_width="wrap_content"
@@ -16,6 +18,7 @@
         android:id="@+id/KEY_NAME"
         android:textSize="16sp"
         android:layout_width="0dp"
+        android:background="@android:color/transparent"
         android:textColor="@color/featureTitleColor"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -24,6 +27,7 @@
     <TextView
         android:id="@+id/KEY_ROOMID"
         android:textSize="16sp"
+        android:background="@android:color/transparent"
         android:layout_width="0dp"
         android:textColor="@color/featureTitleColor"
         android:layout_height="wrap_content"
