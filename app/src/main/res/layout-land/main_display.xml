@@ -17,6 +17,7 @@
         android:ellipsize="end"
         android:freezesText="true"
         android:maxLines="1"
+        android:textColor="#FFFFFF"
         android:text="@string/uart_default_name"
         android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -25,7 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/patch_outline_app_mepilex"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:padding="12sp"/>
 
     <Button
         android:id="@+id/center_center"
@@ -38,8 +40,8 @@
         android:id="@+id/top_left"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginLeftPercent="33%"
-        app:layout_marginTopPercent="20%"
+        app:layout_marginLeftPercent="35.5%"
+        app:layout_marginTopPercent="22.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="top|start"
         />
@@ -47,7 +49,7 @@
         android:id="@+id/top_center"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginTopPercent="20%"
+        app:layout_marginTopPercent="22.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="top|center_horizontal"
         />
@@ -55,8 +57,8 @@
         android:id="@+id/top_right"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginRightPercent="33%"
-        app:layout_marginTopPercent="20%"
+        app:layout_marginRightPercent="35.5%"
+        app:layout_marginTopPercent="22.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="top|end"
         />
@@ -64,7 +66,7 @@
         android:id="@+id/center_left"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginLeftPercent="33%"
+        app:layout_marginLeftPercent="35.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="start|center_vertical"
         />
@@ -72,7 +74,7 @@
         android:id="@+id/center_right"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginRightPercent="33%"
+        app:layout_marginRightPercent="35.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="end|center_vertical"
         />
@@ -80,7 +82,7 @@
         android:id="@+id/bottom"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_marginBottomPercent="20%"
+        app:layout_marginBottomPercent="22.5%"
         android:background="@drawable/button_dr"
         android:layout_gravity="bottom|center_horizontal"
         />
@@ -91,8 +93,9 @@
         android:background="@drawable/button_dr"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_gravity="top|center_horizontal"
-        app:layout_marginTopPercent="2%"
+        android:layout_gravity="bottom|end"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginRightPercent="2%"
         android:onClick="onSetColorClicked"
         android:text="@string/action_setcolor"/>
 
@@ -102,9 +105,10 @@
         android:background="@drawable/button_dr"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_gravity="bottom|center_horizontal"
+        android:layout_gravity="bottom|start"
         android:layout_centerHorizontal="true"
-        app:layout_marginBottomPercent="2%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="2%"
         android:onClick="onConnectClicked"
         android:text="@string/action_connect"/>
 

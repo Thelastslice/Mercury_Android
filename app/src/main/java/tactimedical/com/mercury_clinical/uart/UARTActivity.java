@@ -444,8 +444,13 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 
 				@Override
 				public void onClick(View v) {
-					GraphAsync test = new GraphAsync(UARTActivity.this,b+1,patientFile.toString());
-					test.execute();
+					if(patientFile.exists()){
+						GraphAsync test = new GraphAsync(UARTActivity.this, b + 1, patientFile.toString());
+						test.execute();
+					}
+					else{
+						Toast.makeText(getApplicationContext(),"No existing data for patient/patch location.", Toast.LENGTH_LONG).show();
+					}
 
 				}
 			});

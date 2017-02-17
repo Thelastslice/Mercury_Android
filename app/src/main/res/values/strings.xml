@@ -157,5 +157,8 @@
     <string name="xaxis">Time</string>
     <string name="yaxis">Pressure (mmHg)</string>
     <string name="graph_title">Pressure Sensor History</string>
+    <string name="ThresholdTitle">Threshold</string>
+    <string name="ValueTitle">mmHg</string>
+    <string name="BarTitle">Selection</string>
 
 </resources>

@@ -6,12 +6,61 @@
     android:animateLayoutChanges="true"
     android:padding="12dp">
 
+
+    <TableRow
+        android:id="@+id/nameTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:padding="6sp"
+        android:weightSum="20">
+
+        <TextView
+            android:id="@+id/BarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/ThresholdTitle"
+            android:layout_weight="7.75"
+            />
+
+        <TextView
+            android:id="@+id/BarValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="6sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/ValueTitle"
+            android:layout_weight="8.5"
+            />
+
+        <TextView
+            android:id="@+id/Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/BarTitle"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_weight="3.5"
+            />
+
+    </TableRow>
+
+
     <TableRow
         android:id="@+id/redTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:padding="6sp"
+        android:layout_below="@+id/nameTable"
         android:weightSum="20">
 
         <TextView
@@ -20,11 +69,11 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:padding="6sp"
-            android:gravity="end"
+            android:gravity="center"
             android:layout_gravity="center"
             android:text="@string/DangerName"
             android:textColor="#000000"
-            android:background="@color/colorRed"
+            android:background="@drawable/color_bar_red"
             android:layout_weight="7.75"
             />
 
@@ -34,7 +83,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:padding="6sp"
-            android:gravity="end"
+            android:gravity="center"
             android:layout_gravity="center"
             android:text="@string/Caution"
             android:layout_weight="8.5"
@@ -63,11 +112,11 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:padding="6sp"
-            android:gravity="end"
+            android:gravity="center"
             android:layout_gravity="center"
             android:text="@string/CautionName"
             android:textColor="#000000"
-            android:background="@color/colorYellow"
+            android:background="@drawable/color_bar_yellow"
             android:layout_weight="7.75"
             />
 
@@ -77,7 +126,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:padding="6sp"
-            android:gravity="end"
+            android:gravity="center"
             android:layout_gravity="center"
             android:text="@string/Caution"
             android:layout_weight="8.5"

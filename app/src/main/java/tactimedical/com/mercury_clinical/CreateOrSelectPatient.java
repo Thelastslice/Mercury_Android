@@ -98,7 +98,15 @@ public class CreateOrSelectPatient extends AppCompatActivity  implements View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.saveButton:
-                persistPatient();
+                if (!nameEditText.getText().toString().matches("^[-\\w.]+")||
+                        !idEditText.getText().toString().matches("^[-\\w.]+") ||
+                        !roomEditText.getText().toString().matches("^[-\\w.]+")){
+
+                    Toast.makeText(getApplicationContext(), "Some fields have not been filled.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    persistPatient();
+                }
                 return;
 
             case R.id.editButton:
@@ -208,7 +216,7 @@ public class CreateOrSelectPatient extends AppCompatActivity  implements View.On
             else{
                 if(patientRepo.insert(patient)) {
                     Toast.makeText(getApplicationContext(), "Patient Inserted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), PatientSelect.class);
+                    Intent intent = new Intent(getApplicationContext(), PlacementSelect.class);
                     intent.putExtra(KEY_EXTRA_PATIENT_ID, patientID);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);

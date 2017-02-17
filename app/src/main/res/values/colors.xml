@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#818181</color>
     <color name="colorAccent">#EBA53D</color>
 
-    <color name="featureTitleColor">#000</color>
+    <color name="featureTitleColor">#000000</color>
     <color name="actionBarColor">#d7d7d7</color>
     <color name="actionBarColorDark">#818181</color>
     <color name="actionBarColorAccent">#EBA53D</color>

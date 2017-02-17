@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/mercury_logo_text"
+        android:padding="20sp"
         android:scaleType="fitCenter" />
 
     <Button
         android:id="@+id/splash_button"
         android:layout_gravity="bottom|center_horizontal"
-        app:layout_marginBottomPercent="15%"
-        android:layout_height="70sp"
+        app:layout_marginBottomPercent="20%"
+        android:layout_height="50sp"
         app:layout_widthPercent="50%"
         android:background="@drawable/button_dr"
         android:textColor="#FFFFFF"

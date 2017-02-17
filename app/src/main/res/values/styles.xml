@@ -61,7 +61,8 @@
     </style>
 
     <style name="Widget.Button" parent="@style/Widget.AppCompat.Button">
-        <item name="android:minWidth">160dip</item>
+        <item name="android:minWidth">130dip</item>
+
 
     </style>
 
@@ -99,7 +100,6 @@
     </style>
 
     <style name="AppTheme" parent="@style/AppThemeBase">
-        <item name="android:windowBackground">@drawable/patient_theme</item>
         <item name="android:selectableItemBackground">@drawable/abc_item_background_holo_light
         </item>
     </style>

@@ -149,6 +149,7 @@ public class PatientSelect extends AppCompatActivity implements
     @Override
     protected void onStart() {
         mGoogleApiClient.connect();
+        refreshPatientList();
         super.onStart();
     }
 
@@ -246,7 +247,7 @@ public class PatientSelect extends AppCompatActivity implements
              //   itemCursor.close();
              //   DatabaseManager.getInstance().closeDatabase();
                 startActivity(intent);
-                return false;
+                return true;
             }
         });
 
