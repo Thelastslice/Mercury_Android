@@ -17,7 +17,7 @@
     <color name="headerTextColor">#000</color>
     <color name="actionBarMenuTextColor">#000</color>
 
-    <color name="colorGreen">#00FF00</color>
-    <color name="colorRed">#FF0000</color>
-    <color name="colorYellow">#FFFF00</color>
+    <color name="colorGreen">#00cc00</color>
+    <color name="colorRed">#ce0000</color>
+    <color name="colorYellow">#EBA53D</color>
 </resources>

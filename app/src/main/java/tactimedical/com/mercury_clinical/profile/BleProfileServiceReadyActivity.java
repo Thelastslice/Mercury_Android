@@ -178,7 +178,7 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 			// Update UI
 			mDeviceName = bleService.getDeviceName();
 			mDeviceNameView.setText(mDeviceName);
-			mConnectButton.setText(R.string.action_disconnect);
+			//mConnectButton.setText(R.string.action_disconnect);
 
 			// And notify user if device is connected
 			if (bleService.isConnected()) {
@@ -469,7 +469,6 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 	@Override
 	public void onDeviceConnected(final BluetoothDevice device) {
 		mDeviceNameView.setText(mDeviceName);
-		mConnectButton.setText(R.string.action_disconnect);
 	}
 
 	@Override
@@ -506,12 +505,14 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 
 	@Override
 	public void onServicesDiscovered(final BluetoothDevice device, final boolean optionalServicesFound) {
-		// empty default implementation
+		mConnectButton.setText(R.string.servicesConnect);
+
 	}
 
 	@Override
 	public void onDeviceReady(final BluetoothDevice device) {
-		// empty default implementation
+		mConnectButton.setText(R.string.action_disconnect);
+
 	}
 
 	@Override

@@ -88,6 +88,15 @@
         />
 
     <Button
+        android:id="@+id/battery"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        app:layout_marginBottomPercent="20%"
+        android:background="@drawable/button_dr"
+        android:layout_gravity="bottom|end"
+        />
+
+    <Button
         android:id="@+id/action_setcolor"
         style="@style/Widget.Connect"
         android:background="@drawable/button_dr"

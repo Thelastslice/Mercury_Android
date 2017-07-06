@@ -215,7 +215,7 @@ public abstract class BleProfileActivity extends AppCompatActivity implements Bl
 		mDeviceName = name;
 		mDeviceNameView.setText(name != null ? name : getString(R.string.not_available));
 		mConnectButton.setText(R.string.action_connecting);
-		Log.e(TAG,"WATTA Connecting...");
+		Log.e(TAG,"Connecting...");
 		mBleManager.connect(device);
 	}
 

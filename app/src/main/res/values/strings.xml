@@ -160,5 +160,6 @@
     <string name="ThresholdTitle">Threshold</string>
     <string name="ValueTitle">mmHg</string>
     <string name="BarTitle">Selection</string>
+    <string name="servicesConnect">Starting Mercury Service</string>
 
 </resources>

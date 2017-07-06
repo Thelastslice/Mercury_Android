@@ -74,6 +74,7 @@ public class PatientSelect extends AppCompatActivity implements
     Button btnAddNew;
     private ListView listView;
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
+    public final static String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
     private final String TAG = PatientSelect.class.getSimpleName().toString();
 
     private static final String[] permissions = {WRITE_EXTERNAL_STORAGE,BLUETOOTH,BLUETOOTH_ADMIN,ACCESS_COARSE_LOCATION,NFC};
@@ -229,6 +230,7 @@ public class PatientSelect extends AppCompatActivity implements
                 Log.d(TAG,Integer.toString(patientID));
                 Intent intent = new Intent(getApplicationContext(), PlacementSelect.class);
                 intent.putExtra(KEY_EXTRA_CONTACT_ID, patientID);
+                intent.putExtra(KEY_ACTIVITY_ID,"PS");
                 Toast toast = Toast.makeText(getApplicationContext(), "Select where Mercury Patch will be placed.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP,0,100);
                 toast.show();

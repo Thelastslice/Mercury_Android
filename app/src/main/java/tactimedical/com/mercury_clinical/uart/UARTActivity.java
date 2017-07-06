@@ -61,6 +61,7 @@ import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -107,19 +108,20 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 	private SeekBar yellowBar; private TextView yellowBarValue;
 	private SeekBar redBar; private TextView redBarValue;
 
-	private static final int[] idArray = {R.id.top_center, R.id.center_right, R.id.top_right,
-			R.id.top_left, R.id.center_left, R.id.bottom, R.id.center_center};
+	private static final int[] idArray = {R.id.top_left, R.id.center_left, R.id.bottom,
+			R.id.center_center, R.id.top_right, R.id.center_right, R.id.top_center,R.id.battery};
 	private Context mContext;
 	private Button[] buttList = new Button[idArray.length];
 	private Button mThreshold;
 
+
 	// Create file
 	File patientFile;
 	//Value holders for total presure times
-	private double[] greenTime= new double[7];
-	private double[] yellowTime= new double[7];
-	private double[] redTime= new double[7];
-	final String[] channelList= new String[]{"TC","CR","TR","TL","CL","BC","CC"};
+	private double[] greenTime= new double[8];
+	private double[] yellowTime= new double[8];
+	private double[] redTime= new double[8];
+	final String[] channelList= new String[]{"TL","CL","BC","CC","TR","CR","TC","BATT"};
 	int yellowLevel =175;
 	int redLevel = 300;
 
@@ -181,7 +183,7 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			final String data = intent.getStringExtra(UARTService.EXTRA_DATA);
-			Log.d(TAG,"Broadcast Received");
+			//Log.d(TAG,data);
 			runUIDataUpdater(data);
 
 		}
@@ -224,13 +226,17 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 
 	@Override
 	public void onServicesDiscovered(final BluetoothDevice device, final boolean optionalServicesFound) {
-		Toast.makeText(getApplicationContext(),"Beginning Mercury Patch services.", Toast.LENGTH_LONG).show();
+		Toast toast = Toast.makeText(getApplicationContext(),"Beginning Mercury Patch services.", Toast.LENGTH_LONG);
+		toast.setGravity(Gravity.TOP,0,200);
+		toast.show();
 	}
 
 	@Override
 	public void onDeviceSelected(final BluetoothDevice device, final String name) {
 		// The super method starts the service
-		Toast.makeText(getApplicationContext(),"Connecting to Mercury Patch", Toast.LENGTH_LONG).show();
+		Toast toast = Toast.makeText(getApplicationContext(),"Connecting to Mercury Patch", Toast.LENGTH_LONG);
+		toast.setGravity(Gravity.TOP,0,200);
+		toast.show();
 		super.onDeviceSelected(device, name);
 
 	}
@@ -331,7 +337,7 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 				FileOutputStream fOut = new FileOutputStream(patientFile);
 				//Log.d(TAG, "File write");
 				OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
-				myOutWriter.write("Time, TL, TC, TR, CL, CC, CR, BT\n");
+				myOutWriter.write("Time, TL, TC, TR, CL, CC, CR, BT, VREF\n");
 				myOutWriter.write(currentDateTimeString+","+fileWriteString+"\n");
 				myOutWriter.close();
 				fOut.close();
@@ -478,10 +484,11 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 		int parseIndex = 0;
 
 		for (String stringIndex : tester) {
-			if (parseIndex < 8 && parseIndex >= 1) {
+
+			if (parseIndex < 9	&& parseIndex >= 1) {
 
 				Double uartData = Double.parseDouble(stringIndex);
-				if (uartData == 0.0 && uartData < yellowLevel) {
+				if (uartData < yellowLevel) {
 					buttList[parseIndex-1].getBackground().setColorFilter(Color.parseColor(parseResColor(R.color.colorGreen)), PorterDuff.Mode.SRC_ATOP);
 					greenTime[parseIndex-1] += (double) timeDiff / 60000.0;
 				} else if (uartData >= yellowLevel && uartData < redLevel) {

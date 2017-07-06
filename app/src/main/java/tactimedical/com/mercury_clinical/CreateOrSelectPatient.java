@@ -34,8 +34,8 @@ public class CreateOrSelectPatient extends AppCompatActivity  implements View.On
     RoomRepo roomRepo = new RoomRepo();
     PatientPlacementRepo patientPlacementRepo = new PatientPlacementRepo();
 
-    public final static String KEY_EXTRA_PATIENT_ID = "KEY_EXTRA_PATIENT_ID";
-
+    public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
+    public final static String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
     EditText nameEditText;
     EditText idEditText;
     EditText roomEditText;
@@ -215,11 +215,14 @@ public class CreateOrSelectPatient extends AppCompatActivity  implements View.On
 
             else{
                 if(patientRepo.insert(patient)) {
-                    Toast.makeText(getApplicationContext(), "Patient Inserted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), PlacementSelect.class);
-                    intent.putExtra(KEY_EXTRA_PATIENT_ID, patientID);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Patient Inserted", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), PlacementSelect.class);
+                        intent.putExtra(KEY_EXTRA_CONTACT_ID, Integer.parseInt(idEditText.getText().toString()));
+                        intent.putExtra(KEY_ACTIVITY_ID,"CEP");
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+
+
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Could not Insert patient", Toast.LENGTH_SHORT).show();

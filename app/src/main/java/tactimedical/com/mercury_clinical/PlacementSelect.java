@@ -27,13 +27,20 @@ public class PlacementSelect extends AppCompatActivity implements View.OnClickLi
     int patientID;
     Button sacral_Button, thigh_right_Button, thigh_left_Button, heel_right_Button, heel_left_Button, head_Button;
     public final static String KEY_FILE = "KEY_FILE";
-
+    public final static String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Log.d(TAG,"Entered Placement");
-        patientID = getIntent().getIntExtra(PatientSelect.KEY_EXTRA_CONTACT_ID, 0);
+        String previousActivity= getIntent().getStringExtra(KEY_ACTIVITY_ID);
+        if(previousActivity.equals("PS")){
+            patientID = getIntent().getIntExtra(PatientSelect.KEY_EXTRA_CONTACT_ID,0);
+        }
+        else{
+            patientID = getIntent().getIntExtra(CreateOrSelectPatient.KEY_EXTRA_CONTACT_ID,0);
+        }
+        Log.d(TAG,Integer.toString(patientID));
 
         setContentView(R.layout.placement_select);
         ButtonInitializer();

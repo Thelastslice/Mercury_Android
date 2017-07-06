@@ -196,7 +196,7 @@ public class DeviceListAdapter extends BaseAdapter {
 
 			final ViewHolder holder = (ViewHolder) view.getTag();
 			final String name = device.name;
-			Log.d("Scanner","Name: "+name);
+			//Log.d("Scanner","Name: "+name);
 
 			holder.name.setText(name);
 			holder.address.setText(device.device.getAddress());

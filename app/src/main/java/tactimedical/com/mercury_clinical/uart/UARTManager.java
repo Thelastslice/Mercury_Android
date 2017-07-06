@@ -145,6 +145,7 @@ public class UARTManager extends BleManager<UARTManagerCallbacks> {
 	public final double[] byteArrayToIntArray(byte[] input)
 	{
 		double[] ret = new double[input.length/2];
+		double[] retOutput = new double[ret.length];
 		short[] out = new short[input.length / 2]; // will drop last byte if odd number
 		ByteBuffer bb = ByteBuffer.wrap(input);
 		bb.order( ByteOrder.LITTLE_ENDIAN);
@@ -153,11 +154,23 @@ public class UARTManager extends BleManager<UARTManagerCallbacks> {
 			if (out[i]<0){
 				out[i]=0;
 			}
-			ret[i] = 3.25*((double) out[i] / 4096.0);
-			ret[i] = 376.197 * Math.pow((0.56*(3.25 - ret[i])/ret[i]),-.4025); //100 .5025
-			ret[i]=round(ret[i],1);
+			ret[i] = ((double) out[i]);
 		}
-		return ret;
+		double vRef = 3.6*ret[7];
+		for (int i = 0; i < out.length; i++) {
+			if(i<8){
+				retOutput[i]=round(ret[i],1);
+			}
+/*			else if(i>3){
+				retOutput[i-1] = 0.22*Math.exp(Math.pow(vRef*ret[i],1.94))+15*Math.pow(vRef*ret[i],1.975)-.22;
+				retOutput[i-1]=round(retOutput[i-1],1);
+			}*/
+			else{
+				retOutput[retOutput.length-1] = round(vRef,1);
+			}
+		}
+		//Log.e(TAG, Arrays.toString(retOutput));
+		return retOutput;
 
 	}
 
